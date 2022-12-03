@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randvice.Contracts", "Randvice.Contracts\Randvice.Contracts.csproj", "{DA7F2768-9843-4C9C-8847-6061E72C4F3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randvice.Api", "Randvice.Api\Randvice.Api.csproj", "{4C546EFE-62D2-4D15-A65D-B179365E9160}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA7F2768-9843-4C9C-8847-6061E72C4F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA7F2768-9843-4C9C-8847-6061E72C4F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA7F2768-9843-4C9C-8847-6061E72C4F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA7F2768-9843-4C9C-8847-6061E72C4F3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A20CDE68-AA8F-470E-8804-B77529D6B575}
+	EndGlobalSection
+EndGlobal
