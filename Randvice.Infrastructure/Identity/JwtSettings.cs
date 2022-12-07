@@ -8,5 +8,5 @@ public class JwtSettings
 
     public string Key { get; set; } = null!;
 
-    public TimeSpan ExpirationTime { get; set; }
+    public TimeSpan TokenLifetime { get; set; }
 }

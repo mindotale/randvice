@@ -52,7 +52,7 @@ public class IdentityService : IIdentityService
         var key = new SymmetricSecurityKey(keyBytes);
         var signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature);
 
-        var expirationTime = DateTime.UtcNow.Add(_jwtSettings.ExpirationTime);
+        var expirationTime = DateTime.UtcNow.Add(_jwtSettings.TokenLifetime);
 
         var tokenDescriptor = new SecurityTokenDescriptor
         {
