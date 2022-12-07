@@ -71,6 +71,24 @@ public static class ServiceConfigurationExtensions
         configuration.Bind("Jwt", jwtSettings);
         services.AddSingleton(jwtSettings);
 
+        var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key));
+        var tokenValidationParameters = new TokenValidationParameters()
+        {
+            ValidateIssuer = true,
+            ValidIssuer = jwtSettings.Issuer,
+
+            ValidateAudience = true,
+            ValidAudience = jwtSettings.Audience,
+
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = signingKey,
+
+            ValidateLifetime = true,
+            RequireExpirationTime = true
+        };
+
+        services.AddSingleton(tokenValidationParameters);
+
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -81,21 +99,7 @@ public static class ServiceConfigurationExtensions
             {
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = false;
-                var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.Key));
-                options.TokenValidationParameters = new TokenValidationParameters()
-                {
-                    ValidateIssuer = true,
-                    ValidIssuer = jwtSettings.Issuer,
-
-                    ValidateAudience = true,
-                    ValidAudience = jwtSettings.Audience,
-
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = signingKey,
-
-                    ValidateLifetime = true,
-                    RequireExpirationTime = true
-                };
+                options.TokenValidationParameters = tokenValidationParameters;
             });
 
         services.AddScoped<IIdentityService, IdentityService>();
