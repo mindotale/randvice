@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randvice.Contracts", "Randvice.Contracts\Randvice.Contracts.csproj", "{DA7F2768-9843-4C9C-8847-6061E72C4F3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Randvice.Contracts", "Randvice.Contracts\Randvice.Contracts.csproj", "{DA7F2768-9843-4C9C-8847-6061E72C4F3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randvice.Api", "Randvice.Api\Randvice.Api.csproj", "{4C546EFE-62D2-4D15-A65D-B179365E9160}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Randvice.Api", "Randvice.Api\Randvice.Api.csproj", "{4C546EFE-62D2-4D15-A65D-B179365E9160}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Randvice.Infrastructure", "Randvice.Infrastructure\Randvice.Infrastructure.csproj", "{84919312-92EF-4396-95B6-B0DDF7CB3B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randvice.Core", "Randvice.Core\Randvice.Core.csproj", "{9BB1F8D2-5237-49F8-8FAB-E1AD61E09AA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C546EFE-62D2-4D15-A65D-B179365E9160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84919312-92EF-4396-95B6-B0DDF7CB3B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84919312-92EF-4396-95B6-B0DDF7CB3B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84919312-92EF-4396-95B6-B0DDF7CB3B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84919312-92EF-4396-95B6-B0DDF7CB3B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BB1F8D2-5237-49F8-8FAB-E1AD61E09AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BB1F8D2-5237-49F8-8FAB-E1AD61E09AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BB1F8D2-5237-49F8-8FAB-E1AD61E09AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BB1F8D2-5237-49F8-8FAB-E1AD61E09AA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

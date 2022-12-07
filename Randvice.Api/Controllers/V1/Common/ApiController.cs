@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using MapsterMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Randvice.Api.Controllers.V1.Common;
@@ -7,7 +8,12 @@ namespace Randvice.Api.Controllers.V1.Common;
 [ApiController]
 [Produces("application/json")]
 [Route("api/[controller]")]
-public class ApiController : ControllerBase
+public abstract class ApiController : ControllerBase
 {
+    protected IMapper Mapper { get; }
 
+    protected ApiController(IMapper mapper)
+    {
+        Mapper = mapper;
+    }
 }
