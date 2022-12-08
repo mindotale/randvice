@@ -1,3 +1,5 @@
+﻿using FluentValidation;
+using FluentValidation.AspNetCore;
 ﻿using Mapster;
 using MapsterMapper;
 using Microsoft.OpenApi.Models;
@@ -19,8 +21,9 @@ public static class ServiceConfigurationExtensions
         });
 
         services
-            .ConfigureMapping(configuration)
-            .ConfigureSwagger(configuration);
+            .ConfigureMapping()
+            .ConfigureValidation()
+            .ConfigureSwagger();
 
         return services;
     }
@@ -37,9 +40,15 @@ public static class ServiceConfigurationExtensions
         return services;
     }
 
-    private static IServiceCollection ConfigureSwagger(
-        this IServiceCollection services,
-        IConfiguration configuration)
+    private static IServiceCollection ConfigureValidation(this IServiceCollection services)
+    {
+        services.AddFluentValidationAutoValidation()
+            .AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
+        return services;
+    }
+
+    private static IServiceCollection ConfigureSwagger(this IServiceCollection services)
     {
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(options =>
