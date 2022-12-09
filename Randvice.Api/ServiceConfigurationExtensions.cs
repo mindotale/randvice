@@ -4,6 +4,7 @@ using Mapster;
 using MapsterMapper;
 using Microsoft.OpenApi.Models;
 using Randvice.Api.Filters;
+using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 
 namespace Randvice.Api;
@@ -56,6 +57,7 @@ public static class ServiceConfigurationExtensions
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(options =>
         {
+            options.ExampleFilters();
             options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Version = "v1",
@@ -90,6 +92,8 @@ public static class ServiceConfigurationExtensions
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
             options.IncludeXmlComments(xmlPath);
         });
+
+        services.AddSwaggerExamplesFromAssemblies(Assembly.GetExecutingAssembly());
 
         return services;
     }
