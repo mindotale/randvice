@@ -2,6 +2,7 @@
 using FluentValidation.AspNetCore;
 using Mapster;
 using MapsterMapper;
+using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.OpenApi.Models;
 using Randvice.Api.Filters;
 using Swashbuckle.AspNetCore.Filters;
@@ -94,6 +95,7 @@ public static class ServiceConfigurationExtensions
         });
 
         services.AddSwaggerExamplesFromAssemblies(Assembly.GetExecutingAssembly());
+        services.AddFluentValidationRulesToSwagger();
 
         return services;
     }
