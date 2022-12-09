@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using Randvice.Contracts.V1.Advices;
 
-namespace Randvice.Api.Validators;
+namespace Randvice.Api.Validators.Advices;
 
 public class CreateAdviceRequestValidator : AbstractValidator<CreateAdviceRequest>
 {
