@@ -1,8 +1,9 @@
 ﻿using FluentValidation;
 using FluentValidation.AspNetCore;
-﻿using Mapster;
+using Mapster;
 using MapsterMapper;
 using Microsoft.OpenApi.Models;
+using Randvice.Api.Filters;
 using System.Reflection;
 
 namespace Randvice.Api;
@@ -13,7 +14,10 @@ public static class ServiceConfigurationExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddControllers();
+        services.AddControllers(options =>
+        {
+            options.Filters.Add<ValidationFilter>();
+        });
         services.AddRouting(options =>
         {
             options.LowercaseUrls = true;
@@ -29,8 +33,7 @@ public static class ServiceConfigurationExtensions
     }
 
     private static IServiceCollection ConfigureMapping(
-        this IServiceCollection services,
-        IConfiguration configuration)
+        this IServiceCollection services)
     {
         var config = TypeAdapterConfig.GlobalSettings;
         config.Scan(Assembly.GetExecutingAssembly());
